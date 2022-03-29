@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+$navbar-color: rgb(238,238,238);
+$background-color : #262626;
+$items-color: #D95204;
+// $h1-color: #F29727;
+
+
+.main{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    margin: 20px;
+    color: $items-color;
+}
