@@ -12,7 +12,7 @@ import AddAttraction from "./pages/AddAttraction";
 
 const App = () => {
   const listeAttractions = useSelector((state) => state.attractionReducer);
-  console.log(listeAttractions);
+  // console.log(listeAttractions);
 
   return (
     <div className="main">

@@ -5,7 +5,7 @@ import {
 } from '../actions/types';
 
 const admin = JSON.parse(localStorage.getItem('admin'));
-console.log(admin);
+// console.log(admin);
 const initialState = admin ? {loggedIn : true , admin} : {loggedIn : false, admin : null};
 
 export default function connexionReducer (state = initialState, action) {

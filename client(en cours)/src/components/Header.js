@@ -11,7 +11,7 @@ const Header = () => {
     dispatch(logout());
     <Navigate to="/"/>
   };
-  console.log(admin.loggedIn);
+  // console.log(admin.loggedIn);
 
   return (
     <div className="header">

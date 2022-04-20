@@ -15,3 +15,31 @@ export const getAttractions = () => {
             .catch((err) => console.log(err));
     };
 };
+
+export const editAttraction = (data) => {
+    console.log(data);
+    return (dispatch) => {
+        return axios({
+            method: "POST",
+            url:`http://localhost:3000/admin/edit-attraction`,
+            data: {...data},
+        })
+        .then((res) => {
+            dispatch({ type: EDIT_ATTRACTION, payload: {...data}});
+        })
+        .catch((err) => console.log(err));
+    }
+}
+
+// export const editAttraction = (data) => {
+//     // console.log({...data});
+//     return (dispatch) => {
+//         return axios.post(`http://localhost:3000/admin/edit-attraction`, 
+//             data: {...data},
+//         , console.log(attraction))
+//         .then((res) => {
+//             dispatch({ type: EDIT_ATTRACTION, payload: {...data} });
+//         })
+//         .catch((err) => console.log(err));
+//     }
+// }
