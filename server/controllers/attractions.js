@@ -19,20 +19,23 @@ exports.getAllAttractionsForAdmin = (req, res) => {
     Attraction.getAllAttractions((results,error) => {
         if(error) throw error;
         // console.log(results);
-        res.render('./admin/edit-attraction', { attractions : results });
+        res.send(results);
+        // res.render('./admin/edit-attraction', { attractions : results });
     });
 };
 // Modifier une attraction par l'ID
 exports.updateAttractionById = (req, res) => {
 
     let attraction = new Attraction (req.body.nom, req.body.image, req.body.description);
-    attraction.id_admin = id_admin;
-    console.log(attraction.id_admin);
-    attraction.id = req.body.id;
+    
 
     Attraction.updateAttractionById((results, error) => {
         if(!error){
-            res.redirect('./edit-attraction');
+            console.log(results);
+            console.log(attraction);
+           
+            res.send(attraction)
+           
         }else{
             res.status(500).send(error);
         }

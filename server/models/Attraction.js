@@ -9,11 +9,11 @@ class Attraction {
     id_admin
     constructor(nom, image, description, id_admin)
     {
+        this.id = null;
         this.nom = nom;
         this.image = image;
         this.description = description;
         this.id_admin = id_admin;
-        this.id = null;
     }
     // Récupère toutes les attractions
     static getAllAttractions(callback)
@@ -27,7 +27,8 @@ class Attraction {
     // Modifier une attraction par l'intermédiaire de l'ID
     static updateAttractionById(callback, attraction)
     {
-        db.query('UPDATE attraction SET  nom = (?), image = (?), description = (?), id_admin= (?) WHERE id = (?)', [attraction.nom, attraction.image, attraction.description,attraction.id_admin, attraction.id], (error, results) => {
+        // console.log(attraction);
+        db.query('UPDATE attraction SET  nom = (?), image = (?), description = (?), id_admin= (?) WHERE id = (?)', [attraction.nom, attraction.image, attraction.description, attraction.id_admin, attraction.id], (error, results) => {
                 if (error) throw error;
                 return callback(results, error);
         });
