@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editAttraction } from "../actions/attraction-action";
+import { editAttraction, deleteAttraction, getAttractions } from "../actions/attraction-action";
 
 const EditAttractionCard = ({ attraction }) => {
   const admin = useSelector((state) => state.connexionReducer);
@@ -48,6 +48,7 @@ const EditAttractionCard = ({ attraction }) => {
                   src="../icons/delete.svg"
                   alt="bouton-delete"
                   className="delete-button"
+                  onClick={() => dispatch(deleteAttraction(attraction.id))}
                 />
               </div>
             </div>
@@ -57,7 +58,7 @@ const EditAttractionCard = ({ attraction }) => {
                 <label htmlFor="nom">Nom</label>
                 <input
                   type="text"
-                  value={attraction.nom}
+                  defaultValue={attraction.nom}
                   name="nom"
                   onChange={(e) => setEditNom(e.target.value)}
                 />
@@ -66,7 +67,7 @@ const EditAttractionCard = ({ attraction }) => {
                 <label htmlFor="image">Image</label>
                 <input
                   type="text"
-                  value={attraction.image}
+                  defaultValue={attraction.image}
                   name="image"
                   onChange={(e) => setEditImage(e.target.value)}
                 />
@@ -75,7 +76,7 @@ const EditAttractionCard = ({ attraction }) => {
                 <label htmlFor="description">Description</label>
                 <input
                   type="text"
-                  value={attraction.description}
+                  defaultValue={attraction.description}
                   name="description"
                   onChange={(e) => setEditDescription(e.target.value)}
                 />
@@ -100,6 +101,7 @@ const EditAttractionCard = ({ attraction }) => {
                   src="../icons/delete.svg"
                   alt="bouton-delete"
                   className="delete-button"
+                  onClick={() => dispatch(deleteAttraction(attraction.id))}
                 />
               </div>
             </div>

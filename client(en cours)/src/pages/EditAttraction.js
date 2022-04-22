@@ -1,16 +1,25 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/Header";
 // import AttractionCard from "../components/AttractionCard";
 import EditAttractionCard from "../components/EditAttractionCard";
+import { getAttractions } from "../actions/attraction-action";
 
 const EditAttraction = ({ listeAttractions }) => {
-  // const listeAttractions = useSelector((state) => state.attractionReducer);
+  // const listeAttraction = useSelector((state) => state.attractionReducer);
   // const [editAttraction, setEditAttraction] = useState(false);
   // const [editToggle, setEditToggle] = useState(false);
   // console.log(listeAttractions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAttractions());
+  
+  });
+  
 
   return (
+    
     <div>
       <Header />
       {/* <div >
@@ -26,7 +35,7 @@ const EditAttraction = ({ listeAttractions }) => {
               />
             ))
           ) : (
-            <h1>Ajouter attraction</h1>
+            <h1>Merci d'ajouter des attractions</h1>
           )}
         {/* </div>
       </div> */}
