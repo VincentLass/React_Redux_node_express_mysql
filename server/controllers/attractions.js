@@ -8,7 +8,6 @@ exports.getAllAttractions = (req, res) => {
         if(!error){
             // console.log(results);
             res.send(results);
-            // res.render('./pages/attractions', { attraction : results });
         } else {
             res.status(500).send(error);
         }
@@ -18,24 +17,21 @@ exports.getAllAttractions = (req, res) => {
 exports.getAllAttractionsForAdmin = (req, res) => {
     Attraction.getAllAttractions((results,error) => {
         if(error) throw error;
-        // console.log(results);
+
         res.send(results);
-        // res.render('./admin/edit-attraction', { attractions : results });
     });
 };
 // Modifier une attraction par l'ID
 exports.updateAttractionById = (req, res) => {
 
     let attraction = new Attraction (req.body.nom, req.body.image, req.body.description);
-    
+    attraction.id = req.body.id;
+    attraction.id_admin = req.body.id_admin;
 
     Attraction.updateAttractionById((results, error) => {
         if(!error){
-            console.log(results);
-            console.log(attraction);
-           
+            console.log(attraction);  
             res.send(attraction)
-           
         }else{
             res.status(500).send(error);
         }
@@ -46,11 +42,11 @@ exports.updateAttractionById = (req, res) => {
 exports.addAttractionFromAdmin = (req, res) => {
 
     let attraction = new Attraction (req.body.nom, req.body.image, req.body.description);
-    attraction.id_admin = id_admin;
+    attraction.id_admin = req.body.id_admin;
 
     Attraction.addAttractionFromAdmin((results, error) => {
         if(!error){
-            res.render('./admin/admin');
+            res.send(results);
         }else{
             res.status(500).send(error);
         }
@@ -59,11 +55,11 @@ exports.addAttractionFromAdmin = (req, res) => {
 // Supprimer une attraction
 exports.deleteAttraction = (req,res) => {
     
-    let id = req.body.id;
+    let id = req.params.id;
 
     Attraction.deleteAttraction((results,error) => {
         if(!error){
-            res.render('./admin/admin');
+            res.send(results);
         }else{
             res.status(500).send(error);
         }

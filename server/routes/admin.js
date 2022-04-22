@@ -12,13 +12,14 @@ router.get('/admin/edit-attraction', attraction.getAllAttractionsForAdmin);
 // route permettant la modification d'une attraction
 router.post('/admin/edit-attraction',  attraction.updateAttractionById);
 // route vers la page add-attraction
-router.get('/admin/add-attraction', (req, res) => {
-    res.render('./admin/add-attraction');
-})
+// router.get('/admin/add-attraction', (req, res) => {
+//     res.render('./admin/add-attraction');
+// })
 // route permettant l'ajout d'une attraction
 router.post('/admin/add-attraction', attraction.addAttractionFromAdmin);
 // route permettant la suppression d'une attraction
-router.post('/admin/edit-attraction/delete-attraction', attraction.deleteAttraction);
+router.post('/admin/edit-attraction/:id', attraction.deleteAttraction);
+// router.post('/admin/edit-attraction/delete-attraction', attraction.deleteAttraction);
 // route vers la page 
 router.get('/admin/reservation', reservation.getReservations);
 

@@ -7,11 +7,6 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
-// let ejs = require('ejs');
-
-// gestion de la connexion
-// let session = require('express-session');
-
 // import du port où sera lancée l'app
 const port = 3000;
 

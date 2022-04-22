@@ -45,6 +45,7 @@ class Attraction {
     // Suppression d'une attraction via l'id
     static deleteAttraction(callback, id) 
     {
+        console.log('model',id);
         db.query('DELETE FROM attraction WHERE id = (?)', [id], (error, results) => {
             if (error) throw error;
             return callback(results, error);
