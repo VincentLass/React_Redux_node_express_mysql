@@ -9,8 +9,7 @@ exports.addReservation = (req, res) => {
     Reservation.addReservation((results, error) => {
         if(!error){
             // si pas d'erreur, attraction ajoutée
-            // on est redirigé vers la page d'accueil
-            res.redirect('./')
+            res.send(reservation)
         }else{
             // si erreur, message envoyé
             res.status(500).send(error)
@@ -23,7 +22,8 @@ exports.addReservation = (req, res) => {
 exports.getReservations = (req, res) => {
     Reservation.getReservation((results, error) => {
         if(!error){
-            res.render('./admin/reservation', { reservations : results })
+            console.log(results);
+            res.send(results)
         } else {
             res.status(500).send(error)
         }

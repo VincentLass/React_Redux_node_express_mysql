@@ -21,6 +21,6 @@ router.post('/admin/add-attraction', attraction.addAttractionFromAdmin);
 router.post('/admin/edit-attraction/:id', attraction.deleteAttraction);
 // router.post('/admin/edit-attraction/delete-attraction', attraction.deleteAttraction);
 // route vers la page 
-router.get('/admin/reservation', reservation.getReservations);
+router.get('/admin/reservations', reservation.getReservations);
 
 module.exports = router;
