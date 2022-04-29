@@ -43,8 +43,8 @@ export const deleteAttraction = (id) => {
             dispatch({ type: DELETE_ATTRACTION, payload: id })
         })
         .catch((err) => console.log(err));
-    }
-}
+    };
+};
 
 export const addAttraction = (data) => {
     return (dispatch) => {
@@ -54,17 +54,5 @@ export const addAttraction = (data) => {
             dispatch({type: ADD_ATTRACTION, payload: data});
         })
         .catch((err) => console.log(err));
-    }
-}
-// export const editAttraction = (data) => {
-//     // console.log({...data});
-//     return (dispatch) => {
-//         return axios.post(`http://localhost:3000/admin/edit-attraction`, 
-//             data: {...data},
-//         , console.log(attraction))
-//         .then((res) => {
-//             dispatch({ type: EDIT_ATTRACTION, payload: {...data} });
-//         })
-//         .catch((err) => console.log(err));
-//     }
-// }
+    };
+};

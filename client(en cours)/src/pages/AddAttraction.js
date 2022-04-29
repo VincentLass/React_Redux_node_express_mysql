@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import {  useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { useState } from "react/cjs/react.production.min";
 import { addAttraction } from "../actions/attraction-action";
 import Header from "../components/Header";
 
 const AddAttraction = () => {
-    const admin = useSelector((state) => state.connexionReducer);
+  const admin = useSelector((state) => state.connexionReducer);
   const [nom, setNom] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
@@ -13,23 +13,23 @@ const AddAttraction = () => {
   const dispatch = useDispatch();
 
   const handleForm = async (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      if(nom && image && description) {
-          const data = {
-              nom,
-              image,
-              description,
-              id_admin: admin.admin[0].id,
-          };
-          console.log(admin.admin[0].id);
-          console.log(admin);
-          await dispatch(addAttraction(data));
-          setNom("");
-          setImage("");
-          setDescription("");
-      }
-  }
+    if (nom && image && description) {
+      const data = {
+        nom,
+        image,
+        description,
+        id_admin: admin.admin[0].id,
+      };
+      console.log(admin.admin[0].id);
+      console.log(admin);
+      await dispatch(addAttraction(data));
+      setNom("");
+      setImage("");
+      setDescription("");
+    }
+  };
 
   return (
     <div>

@@ -15,3 +15,15 @@ export const addReservation = (data) => {
             .catch((err) => console.log(err));
     };
 };
+
+export const getReservations = () => {
+    return (dispatch) => {
+        return axios
+        .get("http://localhost:3000/admin/reservations")
+        .then((res) => {
+            dispatch({type: GET_RESERVATIONS, payload: res.data})
+            console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+}

@@ -9,10 +9,12 @@ import EditAttraction from "./pages/EditAttraction";
 import { useSelector } from "react-redux";
 import Admin from "./pages/Admin";
 import AddAttraction from "./pages/AddAttraction";
+import AdminGetReservations from "./pages/AdminGetReservations";
 
 const App = () => {
   const listeAttractions = useSelector((state) => state.attractionReducer);
-  // console.log(listeAttractions);
+  const reservationsListe = useSelector((state) => state.reservationReducer);
+  console.log(reservationsListe);
 
   return (
     <div className="main">
@@ -37,7 +39,12 @@ const App = () => {
             path="/admin/add-attraction"
             element={<AddAttraction />}
           ></Route>
-          <Route path="/admin/reservation" element={<Reservations />}></Route>
+          <Route
+            path="/admin/reservations"
+            element={
+              <AdminGetReservations reservationsListe={reservationsListe} />
+            }
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 import { getAttractions } from './actions/attraction-action';
 import thunk from 'redux-thunk';
+import { getReservations } from './actions/reservation-action';
 
 //Déclaration du store
 const store = createStore(
@@ -17,6 +18,7 @@ const store = createStore(
 
 // Des que le store est monté on envoie getAttractions
 store.dispatch(getAttractions());
+store.dispatch(getReservations());
 
 ReactDOM.render(
   // <React.StrictMode>

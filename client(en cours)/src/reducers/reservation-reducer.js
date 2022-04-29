@@ -1,7 +1,7 @@
 import { ADD_RESERVATION, GET_RESERVATIONS } from "../actions/reservation-action";
 
 
-const initialState = {};
+const initialState = [];
 
 export default function reservationReducer(state = initialState, action) {
     switch (action.type) {

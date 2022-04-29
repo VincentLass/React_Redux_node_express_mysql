@@ -1,0 +1,28 @@
+.reservation-card{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 30%;
+    margin:0 10px 10px 0;
+    color: $items-color;
+    border: 2px solid $items-color;
+    border-radius: 20px;
+
+    h3 {
+        text-align: center;
+        margin: 10px;
+    }
+
+    .reservation-infos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 5px;
+    }
+
+    p {
+        height: 100%;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

@@ -12,7 +12,7 @@ const AttractionCard = ({ attraction, className }) => {
         />
         <div className="card-informations">
           <h2>{attraction.nom}</h2>
-          {attraction.description ? <h3>Description</h3> : ""}
+          {attraction.description ? <h3>Description</h3> : "Pas de description pour cette attraction"}
           <p>{attraction.description}</p>
         </div>
       </div>

@@ -1,13 +1,16 @@
 form {
     display: flex;
     justify-content: center;
+    height: 450px;
+    border: 2px solid red;
 
     .admin-form-positioning {
         display: flex;
         flex-direction: column;
         border: 2px solid $items-color;
         border-radius: 30px;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
+        height: 100%;
         width: 60%;
     
         h1{
@@ -25,6 +28,8 @@ form {
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
+            height: 70%;
+            // border: 2px solid red;
     
             .champ{
                 display: flex;
@@ -39,7 +44,11 @@ form {
                     width: 80%;
                     border-radius: 5px;
                     font-weight: bold;
-                }    
+                }  
+                
+                input {
+                    background-color: white;
+                }
             }
     
             button {

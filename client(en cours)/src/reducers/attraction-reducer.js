@@ -6,8 +6,6 @@ const initialState = {};
 
 export default function attractionReducer(state = initialState, action) {
 
-    // console.log(action.payload);
-    // console.log(state);
    
     switch (action.type) {
         case GET_ATTRACTIONS:
@@ -18,8 +16,9 @@ export default function attractionReducer(state = initialState, action) {
                     console.log(action.payload);
                     console.log({...attraction});
                     return  {
-                        // ...attraction,
-                        ...action.payload,
+                        // ...action.payload,
+                        ...attraction,
+                        attraction: action.payload,
                     };
                 } else return attraction;
             });
@@ -27,8 +26,7 @@ export default function attractionReducer(state = initialState, action) {
             return state.filter((attraction) => attraction.id !== action.payload.id);
             
         case ADD_ATTRACTION:
-            // return action.payload;
-            return state = state.push(action.payload);
+            return [...state, action.payload ]
             
         default:
             return state;

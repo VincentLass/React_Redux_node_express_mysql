@@ -46,8 +46,8 @@ const Reservations = () => {
     <div className="reservation-page">
       <Header />
 
-      <form onSubmit={ handleAddReservation}>
-        <div className="form-container">
+      <form onSubmit={ handleAddReservation} className="form-container">
+        <div className="form-contain">
           <h1>Réservation</h1>
           <div className="form-positioning">
             <div className="champ">

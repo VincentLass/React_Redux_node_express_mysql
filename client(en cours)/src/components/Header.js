@@ -29,7 +29,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/admin/reservation">
+              <NavLink to="/admin/reservations">
                 <h1>Réservations</h1>
               </NavLink>
             </li>
